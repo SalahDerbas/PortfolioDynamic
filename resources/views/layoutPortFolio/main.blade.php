@@ -1,4 +1,4 @@
-<style>
+<!-- <style>
     body {font-family: Arial, Helvetica, sans-serif;}
 
     /* The Modal (background) */
@@ -22,7 +22,8 @@
         margin: auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 80%;
+        width: 100%;
+        height: 53%;
     }
 
     /* The Close Button */
@@ -39,7 +40,7 @@
         text-decoration: none;
         cursor: pointer;
     }
-</style>
+</style> -->
 
 
 <!-- ======= Hero Section ======= -->
@@ -293,8 +294,6 @@
                         <li data-filter="*" class="filter-active">All</li>
                         @foreach ($Projects as $Project)
                         <li data-filter=".filter-{{$Project->name_category}}">{{$Project->name_category}}</li>
-{{--                        <li data-filter=".filter-card">Card</li>--}}
-{{--                        <li data-filter=".filter-web">Web</li>--}}
                         @endforeach
                     </ul>
 
@@ -307,36 +306,132 @@
                     @foreach($Items as $Item)
 
 
-{{--                         @foreach ($Projects as $Project)--}}
-                        <div  style="height : 900px;" class="col-lg-4 col-md-6 portfolio-item filter-{{$Item->category->name_category}}">
+                        <div  style="height:900px; boarder:1px solid black" class="col-lg-4 col-md-6 portfolio-item portfolio-info filter-{{$Item->category->name_category}}">
+                             <div class="text-center" style="border:2px solid #67bce7; padding:12px;">
+                                    <img width="250px" height="180px" src="{{asset('attachments/projects/'.$Item->name_project_item .'/'.$Item->name_project_item . '/1111')}}" />
 
-{{--                            <div class="portfolio-wrap">--}}
-
-                                    <img src="{{asset('attachments/projects/'.$Item->name_project_item .'/'.$Item->name_project_item . '/1111')}}" class="img-fluid" />
-
-
-
-
-
-{{--                                <div class="portfolio-links">--}}
-
-{{--                                    <a href="{{asset('attachments/projects/'.$Item->name_project_item .'/'.$Item->name_project_item . '/1111')}}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="1"><i class="bx bx-plus"></i></a>--}}
-{{--                                    <a href="{{ route('projectItems') }}" title="More Details"><i class="bx bx-link"></i></a>--}}
-{{--                                </div>--}}
-
-
-
-
-
-                            <h2>{{$Item->name_project_item}}</h2>
+                                    <h2>{{$Item->name_project_item}}</h2>
+                                    <button type="button" class="btn btn-info btn-sm" data-toggle="modal"
+                                                    data-target="#edit{{$Item->id}}"
+                                                    title=""><i class="fa fa-edit"></i></button>
 
                             <!-- Trigger/Open The Modal -->
-                            <button id="myBtn">Open Modal</button>
+                            <!-- <button id="myBtn">Open Modal</button> -->
+                        </div>
+
+                                   <!-- edit_modal_Grade -->
+                                   <div class="modal" id="edit{{$Item->id}}" tabindex="0" role="dialog"
+                                         aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 style="font-family: 'Cairo', sans-serif;" class="modal-title"
+                                                        id="exampleModalLabel">
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <!-- add_form -->
+                                                    <form action="#" method="post">
+                                                        {{ method_field('put') }}
+                                                        @csrf
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <label for="position_skill"
+                                                                       class="mr-sm-2">Name Project
+                                                                    :</label>
+                                                                <input id="name_project_item" type="text" name="name_project_item"
+                                                                       class="form-control"
+                                                                       value="{{$Item->name_project_item}}"
+                                                                       required>
+                                                                <input id="id" type="hidden" name="id" class="form-control"
+                                                                       value="{{ $Item->id }}">
+                                                            </div>
+                                                            <div class="col">
+                                                                <label for="percentage"
+                                                                       class="mr-sm-2">Name Client
+                                                                    :</label>
+                                                                <input type="text" class="form-control"
+                                                                       value="{{$Item->name_client}}"
+                                                                       name="name_client" required>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col">
+
+                                                                <div class="form-group">
+
+                                                                    <label for="Name" class="mr-sm-2">Category
+                                                                        :</label>
+                                                                    <select class="form-control" name="category_id" id="category_id" required autofocus >
+                                                                        @foreach($categories as $c)
+                                                                            <option value = "{{ $c->id }}">{{ $c->name_category }}</option>
+                                                                        @endforeach
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+
+
+
+
+
+                                                        <div class="row">
+                                                            <div class="col">
+                                                                <label for="position_skill"
+                                                                       class="mr-sm-2">URL
+                                                                    :</label>
+                                                                <input id="url" type="text" name="url"
+                                                                       class="form-control"
+                                                                       value="{{$Item->url}}"
+                                                                       required>
+                                                            </div>
+                                                            <div class="col">
+                                                                <label for="percentage"
+                                                                       class="mr-sm-2">Name Client
+                                                                    :</label>
+                                                                <input type="date" class="form-control"
+                                                                       value="{{$Item->date_item}}"
+                                                                       name="date_item" required>
+                                                            </div>
+                                                        </div>
+
+
+
+
+                                                        <div class="form-group">
+                                                            <label
+                                                                for="exampleFormControlTextarea1">Descriptions
+                                                                :</label>
+                                                            <textarea class="form-control" name="descriptions_item"
+                                                                      id="exampleFormControlTextarea1"
+                                                                      rows="3">{{$Item->descriptions_item}}</textarea>
+                                                        </div>
+                                                        <br><br>
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary"
+                                                                    data-dismiss="modal">Close</button>
+                                                            <button type="submit"
+                                                                    class="btn btn-success">Submit</button>
+                                                        </div>
+                                                    </form>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
 
                             <!-- The Modal -->
-                            <div id="myModal" class="modal">
+                            <!-- <div id="myModal" class="modal">
 
-                                <!-- Modal content -->
                                 <div class="modal-content">
                                     <span class="close">&times;</span>
                                     <section id="portfolio-details" class="portfolio-details">
@@ -379,120 +474,16 @@
                                             </div>
 
                                         </div>
-                                    </section><!-- End Portfolio Details Section -->
+                                    </section>
 
                                 </div>
 
-                            </div>
-
-
-
-
-                            {{--                            </div>--}}
-{{--                            ============--}}
+                            </div> -->
                         </div>
-{{--                            @endforeach--}}
                     @endforeach
 
 
-
             </div>
-
-{{--            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">--}}
-{{--                @forelse(\App\portfolioItem::latest()->take(5)->get() as $projects)--}}
-{{--                <div class="col-lg-4 col-md-6 portfolio-item filter-app">--}}
-{{--                    <div class="portfolio-wrap">--}}
-{{--                        {{$projects->name_project_item}}--}}
-{{--                        <img src="{{asset('attachments/project'.$projects->name_project_item .'/')}}" class="img-fluid" alt="">--}}
-{{--                        <div class="portfolio-links">--}}
-{{--                            <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>--}}
-{{--                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                @empty--}}
-
-{{--                @endforelse--}}
-
-{{--                <div class="col-lg-4 col-md-6 portfolio-item filter-web">--}}
-{{--                    <div class="portfolio-wrap">--}}
-{{--                        <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">--}}
-{{--                        <div class="portfolio-links">--}}
-{{--                            <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>--}}
-{{--                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-lg-4 col-md-6 portfolio-item filter-app">--}}
-{{--                    <div class="portfolio-wrap">--}}
-{{--                        <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">--}}
-{{--                        <div class="portfolio-links">--}}
-{{--                            <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>--}}
-{{--                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-lg-4 col-md-6 portfolio-item filter-card">--}}
-{{--                    <div class="portfolio-wrap">--}}
-{{--                        <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">--}}
-{{--                        <div class="portfolio-links">--}}
-{{--                            <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>--}}
-{{--                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-lg-4 col-md-6 portfolio-item filter-web">--}}
-{{--                    <div class="portfolio-wrap">--}}
-{{--                        <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">--}}
-{{--                        <div class="portfolio-links">--}}
-{{--                            <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>--}}
-{{--                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-lg-4 col-md-6 portfolio-item filter-app">--}}
-{{--                    <div class="portfolio-wrap">--}}
-{{--                        <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">--}}
-{{--                        <div class="portfolio-links">--}}
-{{--                            <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>--}}
-{{--                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-lg-4 col-md-6 portfolio-item filter-card">--}}
-{{--                    <div class="portfolio-wrap">--}}
-{{--                        <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">--}}
-{{--                        <div class="portfolio-links">--}}
-{{--                            <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>--}}
-{{--                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-lg-4 col-md-6 portfolio-item filter-card">--}}
-{{--                    <div class="portfolio-wrap">--}}
-{{--                        <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">--}}
-{{--                        <div class="portfolio-links">--}}
-{{--                            <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>--}}
-{{--                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div class="col-lg-4 col-md-6 portfolio-item filter-web">--}}
-{{--                    <div class="portfolio-wrap">--}}
-{{--                        <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">--}}
-{{--                        <div class="portfolio-links">--}}
-{{--                            <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>--}}
-{{--                            <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-{{--                </div>--}}
 
             </div>
 
@@ -515,7 +506,7 @@
                     <p class="description"> {{$Service->title_service}}</p>
                 </div>
                 @endforeach
-{{--                <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">--}}
+<!-- {{--                <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">--}}
 {{--                    <div class="icon"><i class="bi bi-card-checklist"></i></div>--}}
 {{--                    <h4 class="title"><a href="">Dolor Sitema</a></h4>--}}
 {{--                    <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>--}}
@@ -539,7 +530,7 @@
 {{--                    <div class="icon"><i class="bi bi-calendar4-week"></i></div>--}}
 {{--                    <h4 class="title"><a href="">Eiusmod Tempor</a></h4>--}}
 {{--                    <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>--}}
-{{--                </div>--}}
+{{--                </div>--}} -->
             </div>
 
         </div>
@@ -802,7 +793,7 @@
 
 
 
-<script>
+<!-- <script>
     // Get the modal
     var modal = document.getElementById("myModal");
 
@@ -828,7 +819,7 @@
             modal.style.display = "none";
         }
     }
-</script>
+</script> -->
 
 
 

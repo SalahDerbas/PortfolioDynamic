@@ -117,7 +117,7 @@
                                     <label class="col-lg-2 col-form-label font-weight-semibold">User Photo</label>
                                     <div class="col-lg-9">
                                         <div class="mb-3">
-                                            <img style="width: 100px" height="100px" src="{{ URL::asset('attachments/user/'.$about['user']) }}" alt="">
+                                            <img style="width: 100px" height="100px" src="{{ URL::asset('attachments/user/'.$about['user'])}}" alt="">
                                         </div>
                                         <input name="user" accept="image/*" type="file" class="file-input" data-show-caption="false" data-show-upload="false" data-fouc>
                                     </div>
