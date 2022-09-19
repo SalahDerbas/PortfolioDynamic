@@ -43,6 +43,9 @@ Route::group(['middleware' => 'auth'], function () {
 
 Route::post('/email', 'HomeController@sendEmail')->name('sendEmail');
 Route::get('/myportfolio', 'HomeController@myportfolio')->name('myportfolio');
+Route::get('/portfolio', 'HomeController@portfolio')->name('portfolio');
+Route::get('/projectinformation/{id}','HomeController@projectinformation');
+
 Route::get('/projectItems', 'PortfolioitemController@projectItems')->name('projectItems');
 
 

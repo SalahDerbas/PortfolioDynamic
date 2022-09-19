@@ -79,9 +79,7 @@
                                             </td>
                                         <td>
                                             @foreach($Items->images as $attachment)
-{{--                                                @if (!$attachment->filename  <>  $Items->name_project_item)--}}
                                                 <img src="{{asset('attachments/projects/'.$Items->name_project_item. '/'.$attachment->filename)}}" width="100" height="100" />
-{{--                                                @endif--}}
                                             @endforeach
                                         </td>
                                         <td>

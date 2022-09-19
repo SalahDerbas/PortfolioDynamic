@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\about;
 use App\client;
 use App\contact;
@@ -25,10 +26,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     /**
      * Show the application dashboard.
@@ -119,6 +120,38 @@ class HomeController extends Controller
 
 
 
+    public function portfolio(){
+
+        $collection = about::all();
+        $about['about'] = $collection->flatMap(function ($collection) {
+            return [$collection->key => $collection->value];
+        });
+        $collection1 = summary::all();
+        $summary['summary'] = $collection1->flatMap(function ($collection1) {
+            return [$collection1->key => $collection1->value];
+        });
+        $collection2 = contact::all();
+        $contact['contact'] = $collection2->flatMap(function ($collection2) {
+            return [$collection2->key => $collection2->value];
+        });
+
+        $Skiils = skill::all();
+        $Educations = education::all();
+        $Experiences = experience::all();
+        $Services = service::all();
+        $Clients = client::all();
+        $Positions = position::all();
+        $Projects = portfolioCategory::all();
+        $Items  = portfolioItem::all();
+        $categories = portfolioCategory::all();
+        $user = User::first();
+
+        return view('portfolio' ,$about ,
+            compact('Items','categories','Projects','Positions','Skiils' , 'Educations' , 'Experiences' , 'Services' , 'Clients' , 'user'))
+            ->with($summary)->with($contact);
+    }
+
+
 
 
     public function myportfolio()
@@ -150,9 +183,31 @@ class HomeController extends Controller
         $Projects = portfolioCategory::all();
         $Items  = portfolioItem::all();
         $categories = portfolioCategory::all();
+        $user = User::first();
 
         return view('myportfolio' ,$about ,
-            compact('Items','categories','Projects','Positions','Skiils' , 'Educations' , 'Experiences' , 'Services' , 'Clients'))
+            compact('Items','categories','Projects','Positions','Skiils' , 'Educations' , 'Experiences' , 'Services' , 'Clients' , 'user'))
             ->with($summary)->with($contact);
     }
+
+    public function projectinformation($id){
+
+        $collection = about::all();
+        $about['about'] = $collection->flatMap(function ($collection) {
+            return [$collection->key => $collection->value];
+        });
+
+        $collection2 = contact::all();
+        $contact['contact'] = $collection2->flatMap(function ($collection2) {
+            return [$collection2->key => $collection2->value];
+        });
+
+        $Item = portfolioItem::where('id',$id)->get();
+        $user = User::first();
+
+        return view ('projectinformation', compact('Item' ));
+    }
+
+
+
 }
