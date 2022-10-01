@@ -14,6 +14,9 @@ use App\position;
 use App\service;
 use App\skill;
 use App\summary;
+use App\aboutquestion;
+use App\pricing;
+use App\question;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\ContactMail;
@@ -145,9 +148,12 @@ class HomeController extends Controller
         $Items  = portfolioItem::all();
         $categories = portfolioCategory::all();
         $user = User::first();
+        $AboutQuestions = aboutquestion::all();
+        $pricings = pricing::all();
+        $questions = question::all();
 
         return view('portfolio' ,$about ,
-            compact('Items','categories','Projects','Positions','Skiils' , 'Educations' , 'Experiences' , 'Services' , 'Clients' , 'user'))
+            compact('questions','pricings','AboutQuestions','Items','categories','Projects','Positions','Skiils' , 'Educations' , 'Experiences' , 'Services' , 'Clients' , 'user'))
             ->with($summary)->with($contact);
     }
 

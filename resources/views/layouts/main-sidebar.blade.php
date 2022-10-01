@@ -34,6 +34,15 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{route('AboutQuestions.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-copy"></i>
+                        <p>
+                            Questions About You
+                        </p>
+                    </a>
+                </li>
+                
 
                 <li class="nav-item">
                     <a href="{{route('Position.index')}}" class="nav-link">
@@ -77,6 +86,24 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-header">Questions</li>
+                <li class="nav-item">
+                    <a href="{{route('Questions.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-copy"></i>
+                        <p>
+                            Questions  You
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-header">Pricing</li>
+                <li class="nav-item">
+                    <a href="{{route('Pricings.index')}}" class="nav-link">
+                        <i class="nav-icon fas fa-copy"></i>
+                        <p>
+                        Pricing  You
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-header">Portfolio</li>
                 <li class="nav-item">
                     <a href="{{route('CategoryP.index')}}" class="nav-link">
@@ -108,6 +135,7 @@
                         <p>  Client You </p>
                     </a>
                 </li>
+               
                 <li class="nav-header"> Contacts </li>
                 <li class="nav-item">
                     <a href="{{route('Contact.index')}}" class="nav-link">

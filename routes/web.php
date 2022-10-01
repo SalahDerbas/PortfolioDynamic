@@ -37,6 +37,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('About', 'AboutController');
     Route::resource('Contact', 'ContactController');
     Route::resource('Position', 'PositionContreller');
+    Route::resource('AboutQuestions', 'AboutQuestionsController');
+    Route::resource('Questions', 'QuestionsController');
+    Route::resource('Pricings', 'PricingsController');
+    
 
 });
 

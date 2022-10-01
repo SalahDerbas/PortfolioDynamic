@@ -68,6 +68,12 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
+                                    <label class="col-lg-2 col-form-label font-weight-semibold">Watch Abouts</label>
+                                    <div class="col-lg-9">
+                                        <input name="watch" value="{{ $about['watch'] }}" type="text" class="form-control" placeholder="School Email">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
                                     <label class="col-lg-2 col-form-label font-weight-semibold">Degree<span class="text-danger">*</span></label>
                                     <div class="col-lg-9">
                                         <input required name="degree" value="{{$about['degree'] }}" type="text" class="form-control" >

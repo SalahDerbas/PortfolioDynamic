@@ -20,6 +20,7 @@ class AboutTableSeeder extends Seeder
             ['key' => 'birthday', 'value' => '2038-01-19 03:14:07'],
             ['key' => 'city', 'value' => 'Damascus'],
             ['key' => 'website', 'value' => 'www.'],
+            ['key' => 'watch', 'value' => 'www.youtube.com'],
             ['key' => 'degree', 'value' => 'Master'],
             ['key' => 'email', 'value' => 'ssss@gmail.com'],
             ['key' => 'descriptions', 'value' => 'descriptions
