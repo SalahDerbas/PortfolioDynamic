@@ -14,9 +14,9 @@ class AdmainSeedeer extends Seeder
     public function run()
     {
         DB::table('users')->insert([
-            'name' => 'Salah Derbas',
-            'email' => 'salahderbas1@gmail.com',
-            'password' => Hash::make('12345678'),
+            'name' => 'Hasan Awwad',
+            'email' => '7asan3wwad@gmail.com',
+            'password' => Hash::make('0954241914'),
         ]);
     }
 }

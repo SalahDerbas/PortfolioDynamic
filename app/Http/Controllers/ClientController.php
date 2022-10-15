@@ -34,8 +34,16 @@ class ClientController extends Controller
             $Clients->name_client = $request->name_client;
             $Clients->position_client = $request->position_client;
             $Clients->title_client = $request->title_client;
-            $Clients->name_image = $request->file('image')->getClientOriginalName();
-            $Clients->image = $request->file('image')->storeAs('attachments/students/'.$Clients->name_image,$Clients->name_image , 'attachments');
+            $Clients->facebook = $request->facebook;
+            $Clients->instegram = $request->instegram;
+            if($request->file('image'))
+           { 
+               $Clients->name_image = $request->file('image')->getClientOriginalName();
+               $Clients->image = $request->file('image')->storeAs('attachments/students/'.$Clients->name_image,$Clients->name_image , 'attachments');
+            }
+            else {
+                $Clients->image = 'assets/img/client.png';
+            }
             $Clients->save();
             return redirect()->route('Clients.index')->with('message','Data added Successfully');
         }
@@ -62,6 +70,8 @@ class ClientController extends Controller
                 $Clients->name_client = $request->name_client,
                 $Clients->position_client = $request->position_client,
                 $Clients->title_client = $request->title_client,
+                $Clients->facebook = $request->facebook,
+                $Clients->instegram = $request->instegram,
             ]);
             return redirect()->route('Clients.index')->with('info','Data update Successfully');
         }

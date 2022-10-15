@@ -11,11 +11,11 @@
 @endsection
 
 @section('title_page1')
-    Clients
+Dashboard  
 @endsection
 
 @section('title_page2')
-Dashboard
+Clients
 @endsection
 
 @section('content')
@@ -53,6 +53,8 @@ Dashboard
                                 <th>Name Client</th>
                                 <th>Position Client</th>
                                 <th>Title</th>
+                                <th>Facebook</th>
+                                <th>Instegram</th>
                                 <th>Image</th>
                                 <th>Operations</th>
                             </tr>
@@ -66,6 +68,8 @@ Dashboard
                                 <td>{{$Client->name_client}}</td>
                                 <td>{{$Client->position_client}}</td>
                                 <td>{{$Client->title_client}}</td>
+                                <td>{{$Client->facebook}}</td>
+                                <td>{{$Client->instegram}}</td>
 {{--                                <td>--}}
 {{--                                    <img src="{{ asset( $Client->image) }}" />--}}
 {{--                                </td>--}}
@@ -130,6 +134,30 @@ Dashboard
                                                                name="position_client" required>
                                                     </div>
                                                 </div>
+
+
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <label for="facebook"
+                                                               class="mr-sm-2">Facebook Client
+                                                            :</label>
+                                                        <input  type="text" name="facebook"
+                                                               class="form-control"
+                                                               value="{{$Client->facebook}}"
+                                                               required>
+                                                       
+                                                    </div>
+                                                    <div class="col">
+                                                        <label for="instegram"
+                                                               class="mr-sm-2">Instegram Client
+                                                            :</label>
+                                                        <input type="text" class="form-control"
+                                                               value="{{$Client->instegram}}"
+                                                               name="instegram" required>
+                                                    </div>
+                                                </div>
+
+
                                                 <div class="form-group">
                                                     <label
                                                         for="exampleFormControlTextarea1">Title
@@ -231,6 +259,18 @@ Dashboard
                                 <label for="Name_en" class="mr-sm-2">Position Client
                                     :</label>
                                 <input id="position_client" type="text" class="form-control" name="position_client">
+                            </div>
+                        </div>
+                        <div class="row">
+                        <div class="col">
+                                <label for="facebook" class="mr-sm-2">Facebook Client
+                                    :</label>
+                                <input id="facebook" type="text" class="form-control" name="facebook">
+                            </div>
+                            <div class="col">
+                                <label for="instegram" class="mr-sm-2">Instegram Client
+                                    :</label>
+                                <input id="instegram" type="text" class="form-control" name="instegram">
                             </div>
                         </div>
                         <div class="form-group">

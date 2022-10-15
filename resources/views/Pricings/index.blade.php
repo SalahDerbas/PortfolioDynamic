@@ -11,11 +11,11 @@ Pricings Portfolio
 @endsection
 
 @section('title_page1')
-Pricings
+Dashboard 
 @endsection
 
 @section('title_page2')
-    Dashboard
+Pricings
 @endsection
 
 @section('content')

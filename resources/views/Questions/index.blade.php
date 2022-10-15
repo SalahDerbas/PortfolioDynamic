@@ -11,11 +11,11 @@ Questions Portfolio
 @endsection
 
 @section('title_page1')
-     Questions
+Dashboard 
 @endsection
 
 @section('title_page2')
-    Dashboard
+Questions
 @endsection
 
 @section('content')

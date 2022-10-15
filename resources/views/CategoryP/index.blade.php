@@ -11,11 +11,11 @@
 @endsection
 
 @section('title_page1')
-    Category
+Dashboard  
 @endsection
 
 @section('title_page2')
-    Dashboard
+Category
 @endsection
 
 @section('content')

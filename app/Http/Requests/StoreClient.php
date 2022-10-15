@@ -28,6 +28,8 @@ class StoreClient extends FormRequest
             'name_client' => 'required',
             'position_client' => 'required',
             'title_client' => 'required',
+            'facebook' => 'required',
+            'instegram' => 'required',
         ];
     }
 
@@ -37,6 +39,8 @@ class StoreClient extends FormRequest
             'name_client.required' =>'Name Client is Required',
             'position_client.required' =>'Position Client is Required',
             'title_client.required' => 'Title Client is Required',
+            'facebook.required' => 'Facebook Clientis Required',
+            'instegram.required' => 'Instegram Client is Required',
         ];
     }
 }

@@ -11,11 +11,11 @@
 @endsection
 
 @section('title_page1')
-    Positions
+Dashboard 
 @endsection
 
 @section('title_page2')
-    Dashboard
+Positions
 @endsection
 
 @section('content')

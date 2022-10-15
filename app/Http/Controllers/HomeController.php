@@ -6,14 +6,11 @@ use App\User;
 use App\about;
 use App\client;
 use App\contact;
-use App\education;
-use App\experience;
 use App\portfolioCategory;
 use App\portfolioItem;
 use App\position;
 use App\service;
 use App\skill;
-use App\summary;
 use App\aboutquestion;
 use App\pricing;
 use App\question;
@@ -42,11 +39,13 @@ class HomeController extends Controller
     public function index()
     {
         $Skill= skill::all()->count();
-        $Educations= education::all()->count();
+
         $Category= portfolioCategory::all()->count();
         $ItemsP= portfolioItem::all()->count();
-        $Experiences= experience::all()->count();
-        return view('welcome' , compact('Skill' , 'Educations', 'Category' ,'ItemsP' ,'Experiences'));
+        $Pricings = pricing::all()->count();
+        $Clients  = client::all()->count();
+
+        return view('welcome' , compact('Skill' ,'Category' ,'ItemsP' , 'Pricings' , 'Clients'));
     }
 
 
@@ -129,18 +128,14 @@ class HomeController extends Controller
         $about['about'] = $collection->flatMap(function ($collection) {
             return [$collection->key => $collection->value];
         });
-        $collection1 = summary::all();
-        $summary['summary'] = $collection1->flatMap(function ($collection1) {
-            return [$collection1->key => $collection1->value];
-        });
+
         $collection2 = contact::all();
         $contact['contact'] = $collection2->flatMap(function ($collection2) {
             return [$collection2->key => $collection2->value];
         });
 
         $Skiils = skill::all();
-        $Educations = education::all();
-        $Experiences = experience::all();
+
         $Services = service::all();
         $Clients = client::all();
         $Positions = position::all();
@@ -153,8 +148,8 @@ class HomeController extends Controller
         $questions = question::all();
 
         return view('portfolio' ,$about ,
-            compact('questions','pricings','AboutQuestions','Items','categories','Projects','Positions','Skiils' , 'Educations' , 'Experiences' , 'Services' , 'Clients' , 'user'))
-            ->with($summary)->with($contact);
+            compact('questions','pricings','AboutQuestions','Items','categories','Projects','Positions','Skiils' , 'Services' , 'Clients' , 'user'))
+            ->with($contact);
     }
 
 
@@ -168,10 +163,6 @@ class HomeController extends Controller
         });
 
 
-        $collection1 = summary::all();
-        $summary['summary'] = $collection1->flatMap(function ($collection1) {
-            return [$collection1->key => $collection1->value];
-        });
 
 
         $collection2 = contact::all();
@@ -181,8 +172,7 @@ class HomeController extends Controller
 
 
         $Skiils = skill::all();
-        $Educations = education::all();
-        $Experiences = experience::all();
+
         $Services = service::all();
         $Clients = client::all();
         $Positions = position::all();
@@ -192,8 +182,8 @@ class HomeController extends Controller
         $user = User::first();
 
         return view('myportfolio' ,$about ,
-            compact('Items','categories','Projects','Positions','Skiils' , 'Educations' , 'Experiences' , 'Services' , 'Clients' , 'user'))
-            ->with($summary)->with($contact);
+            compact('Items','categories','Projects','Positions','Skiils' , 'Services' , 'Clients' , 'user'))
+            ->with($contact);
     }
 
     public function projectinformation($id){

@@ -27,13 +27,11 @@ Route::group(['middleware' => 'auth'], function () {
 
 //    Route::get('/dashboard','DashboardController@index')->name('dashboard');
     Route::resource('Skills', 'SkillsController');
-    Route::resource('Educations', 'EducationController');
-    Route::resource('Experiences', 'ExperinseController');
+
     Route::resource('Services', 'ServicesController');
     Route::resource('Clients', 'ClientController');
     Route::resource('CategoryP', 'PortfolioCategoryController');
     Route::resource('ItemsP', 'PortfolioitemController');
-    Route::resource('Summary', 'SummaryController');
     Route::resource('About', 'AboutController');
     Route::resource('Contact', 'ContactController');
     Route::resource('Position', 'PositionContreller');

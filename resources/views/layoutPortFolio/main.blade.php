@@ -97,7 +97,6 @@
 
             <div class="section-title">
                 <h2>Resume</h2>
-                <p>{{ $summary['descriptions_summary'] }}</p>
             </div>
 
             <div class="row">
@@ -105,41 +104,15 @@
                     <h3 class="resume-title">Sumary</h3>
                     <div class="resume-item pb-0">
                         <h4>Alex Smith</h4>
-                        <p><em>{{ $summary['title_summary'] }}.</em></p>
                         <ul>
-                            <li>{{ $summary['place'] }}</li>
-                            <li>{{ $contact['Calls'] }}</li>
-                            <li>{{ $about['email'] }}</li>
+
                         </ul>
                     </div>
 
-                    <h3 class="resume-title">Education</h3>
-                    @foreach ($Educations as $Education)
-                    <div class="resume-item">
-                        <h4>{{$Education->name}}</h4>
-                        <h5>{{$Education->from_education}}  - {{$Education->to_education}}</h5>
-                        <p><em>{{$Education->univercity_name}}</em></p>
-                        <p> {{$Education->title}}</p>
-                    </div>
-                    @endforeach
+                 
 
                 </div>
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="resume-title">Professional Experience</h3>
-                    @foreach ($Experiences as $Experience)
-                    <div class="resume-item">
-                        <h4>{{$Experience->position_experience}}</h4>
-                        <h5>{{$Experience->from_experience}} - {{$Experience->to_experience}}</h5>
-                        <p><em>{{$Experience->company_name}}</em></p>
-                        <ul>
-                            <li> {{$Experience->title_experience}}</li>
-
-                        </ul>
-                    </div>
-                    @endforeach
-
-                </div>
-            </div>
+               
 
         </div>
     </section><!-- End Resume Section -->

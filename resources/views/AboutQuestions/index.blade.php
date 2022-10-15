@@ -11,11 +11,11 @@
 @endsection
 
 @section('title_page1')
-    About Questions
+Dashboard 
 @endsection
 
 @section('title_page2')
-    Dashboard
+About Questions
 @endsection
 
 @section('content')

@@ -2,7 +2,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{route('home')}}" class="brand-link">
-        <img src="{{asset('assets/img/Logo SD1.jpg')}}" alt="SD Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+        <img src="{{asset('assets/img/Logo SD1.png')}}" alt="SD Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
 
         <span class="brand-text font-weight-light">Portfolio Project</span>
     </a>
@@ -28,7 +28,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{route('About.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
+                    <i class="nav-icon fas fa-user"></i>
                         <p>
                             About You
                         </p>
@@ -36,7 +36,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="{{route('AboutQuestions.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
+                        <i class="nav-icon fas fa-question"></i>
                         <p>
                             Questions About You
                         </p>
@@ -46,50 +46,27 @@
 
                 <li class="nav-item">
                     <a href="{{route('Position.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
+                        <i class="nav-icon fas fa-money-bill"></i>
                         <p>
                             Position You
                         </p>
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{{route('Summary.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-tree"></i>
-                        <p>
-                            Summary You
-                        </p>
-                    </a>
-                </li>
+              
                 <li class="nav-item">
                     <a href="{{route('Skills.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
+                        <i class="nav-icon fas fa-check"></i>
                         <p>
                             Skills You
                         </p>
                     </a>
                 </li>
-                <li class="nav-header">Professional</li>
-                <li class="nav-item">
-                    <a href="{{route('Experiences.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>
-                            Experiences You
-                        </p>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="{{route('Educations.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
-                        <p>
-                            Educations You
-                        </p>
-                    </a>
-                </li>
+                
                 <li class="nav-header">Questions</li>
                 <li class="nav-item">
                     <a href="{{route('Questions.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
+                        <i class="nav-icon fas fa-question"></i>
                         <p>
                             Questions  You
                         </p>
@@ -98,7 +75,7 @@
                 <li class="nav-header">Pricing</li>
                 <li class="nav-item">
                     <a href="{{route('Pricings.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
+                        <i class="nav-icon fas fa-dollar-sign"></i>
                         <p>
                         Pricing  You
                         </p>
@@ -107,7 +84,7 @@
                 <li class="nav-header">Portfolio</li>
                 <li class="nav-item">
                     <a href="{{route('CategoryP.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
+                        <i class="nav-icon fas fa-folder-open"></i>
                         <p>
                             Category You
                         </p>
@@ -124,14 +101,14 @@
                 <li class="nav-header"> Services </li>
                 <li class="nav-item">
                     <a href="{{route('Services.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
+                        <i class="nav-icon fas fa-server"></i>
                         <p>    Services You </p>
                     </a>
                 </li>
                 <li class="nav-header"> Clients </li>
                 <li class="nav-item">
                     <a href="{{route('Clients.index')}}" class="nav-link">
-                        <i class="nav-icon fas fa-file"></i>
+                        <i class="nav-icon fas fa-users"></i>
                         <p>  Client You </p>
                     </a>
                 </li>
@@ -139,7 +116,7 @@
                 <li class="nav-header"> Contacts </li>
                 <li class="nav-item">
                     <a href="{{route('Contact.index')}}" class="nav-link">
-                        <i class="fas fa-file nav-icon"></i>
+                        <i class="fas fa-address-book nav-icon"></i>
                         <p>    Contact </p>
                     </a>
                 </li>

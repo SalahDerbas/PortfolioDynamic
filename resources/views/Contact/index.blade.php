@@ -11,11 +11,11 @@
 @endsection
 
 @section('title_page1')
-    Contact
+Dashboard  
 @endsection
 
 @section('title_page2')
-    Dashboard
+Contact
 @endsection
 
 @section('content')
@@ -38,7 +38,7 @@
                                 <div class="form-group row">
                                     <label class="col-lg-2 col-form-label font-weight-semibold">Calls</label>
                                     <div class="col-lg-9">
-                                        <input name="Calls" value="{{$contact['Calls'] }}" type="number" class="form-control" >
+                                        <input name="Calls" value="{{$contact['Calls'] }}" type="text" class="form-control" >
                                     </div>
                                 </div>
 
@@ -48,12 +48,6 @@
                                         <input name="facebook" value="{{ $contact['facebook'] }}" required type="text" class="form-control" >
                                     </div>
 
-                                </div>
-                                <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label font-weight-semibold">Twitter</label>
-                                    <div class="col-lg-9">
-                                        <input name="twitter" value="{{$contact['twitter'] }}" type="text" class="form-control" >
-                                    </div>
                                 </div>
                                 <div class="form-group row">
                                     <label class="col-lg-2 col-form-label font-weight-semibold">Instagram<span class="text-danger">*</span></label>

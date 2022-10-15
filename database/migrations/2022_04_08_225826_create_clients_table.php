@@ -18,6 +18,8 @@ class CreateClientsTable extends Migration
             $table->string('name_client');
             $table->string('position_client');
             $table->string('title_client');
+            $table->string('facebook');
+            $table->string('instegram');
             $table->string('name_image')->nullable();
             $table->string('image')->nullable();
             $table->timestamps();

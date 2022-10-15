@@ -4,7 +4,6 @@
         <img src="{{ URL::asset('attachments/logo/'.$about['logo']) }}" alt="" class="img-fluid rounded-circle">
         <h1 class="text-light"><a href="index.html">{{ $user->name }}</a></h1>
         <div class="social-links mt-3 text-center">
-            <a href="{{ $contact['twitter'] }}" target="_blank" class="twitter"><i class="bx bxl-twitter"></i></a>
             <a href="{{ $contact['facebook'] }}" class="facebook"><i class="bx bxl-facebook"></i></a>
             <a href="{{ $contact['instagram'] }}" class="instagram"><i class="bx bxl-instagram"></i></a>
             <a href="{{ $contact['skype'] }}" class="google-plus"><i class="bx bxl-skype"></i></a>

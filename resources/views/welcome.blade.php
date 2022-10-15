@@ -42,14 +42,14 @@ Dashboard
                     <!-- small box -->
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>{{$Experiences}}</h3>
+                            <h3>{{$Pricings}}</h3>
 
-                            <p>Experiences</p>
+                            <p>Pricings</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
                         </div>
-                        <a href="{{route('Experiences.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{route('Pricings.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -59,14 +59,14 @@ Dashboard
                     <!-- small box -->
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>{{$Educations}}</h3>
+                            <h3>{{$Clients}}</h3>
 
-                            <p>Educations</p>
+                            <p>Clients</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <a href="{{route('Educations.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{route('Clients.index')}}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -124,10 +124,10 @@ Dashboard
                                         <a class="nav-link" href="#Projects" data-toggle="tab">Projects</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#Experiences" data-toggle="tab">Experiences</a>
+                                        <a class="nav-link" href="#Pricings" data-toggle="tab">Pricings</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#Educations" data-toggle="tab">Educations</a>
+                                        <a class="nav-link" href="#Clients" data-toggle="tab">Clients</a>
                                     </li>
                                 </ul>
                             </div>
@@ -146,7 +146,6 @@ Dashboard
                                                         <th>Title</th>
                                                         <th>Positions</th>
                                                         <th>Percentage</th>
-                                                        <th>Created At</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -156,7 +155,6 @@ Dashboard
                                                             <td>{{$skills->title_skill}}</td>
                                                             <td>{{$skills->position_skill}}</td>
                                                             <td>{{$skills->percentage}}</td>
-                                                            <td class="text-success">{{$skills->created_at}}</td>
                                                             @empty
                                                                 <td class="alert-danger" colspan="8">Data Not Found</td>
                                                         </tr>
@@ -180,7 +178,6 @@ Dashboard
                                                         <th>URL</th>
                                                         <th>Descriptions</th>
                                                         <th>Date</th>
-                                                        <th>Created At</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
@@ -192,7 +189,6 @@ Dashboard
                                                             <td>{{$projects->url}}</td>
                                                             <td>{{$projects->descriptions_item}}</td>
                                                             <td>{{$projects->date_item}}</td>
-                                                            <td class="text-success">{{$projects->created_at}}</td>
                                                             @empty
                                                                 <td class="alert-danger" colspan="8">Data Not Found</td>
                                                         </tr>
@@ -204,32 +200,35 @@ Dashboard
 
                                     </div>
                                 </div>
-                                <div class="chart tab-pane" id="Experiences" style="position: relative; height: 300px;">
-                                    <div id="Experiences">
+
+                                <div class="chart tab-pane" id="Pricings" style="position: relative; height: 300px;">
+                                    <div id="Pricings">
                                         <div class="tab-pane fade active show"  role="tabpanel" aria-labelledby="students-tab">
                                             <div class="table-responsive mt-15">
                                                 <table style="text-align: center" class="table center-aligned-table table-hover mb-0">
                                                     <thead>
                                                     <tr  class="table-info text-danger">
                                                         <th>#</th>
-                                                        <th>Position</th>
-                                                        <th>From </th>
-                                                        <th>To</th>
-                                                        <th>Company Name</th>
-                                                        <th>Title</th>
-                                                        <th>Created At</th>
+                                                        <th>Pricing Name</th>
+                                                        <th>Date</th>
+                                                        <th>Price</th>
+                                                        <th>All Features</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    @forelse(\App\experience::latest()->take(5)->get() as $experience)
+                                                    @forelse(\App\pricing::latest()->take(5)->get() as $pricings)
                                                         <tr>
                                                             <td>{{$loop->iteration}}</td>
-                                                            <td>{{$experience->position_experience}}</td>
-                                                            <td>{{$experience->from_experience}}</td>
-                                                            <td>{{$experience->to_experience}}</td>
-                                                            <td>{{$experience->company_name}}</td>
-                                                            <td>{{$experience->title_experience}}</td>
-                                                            <td class="text-success">{{$experience->created_at}}</td>
+                                                            <td>{{$pricings->name_pricing}}</td>
+                                                            <td>{{$pricings->date}}</td>
+                                                            <td>{{$pricings->price}}</td>
+                                                            <td>
+                                                            {{$pricings->featured_1}} <br>
+                                                            {{$pricings->featured_2}} <br>
+                                                            {{$pricings->featured_3}} <br>
+                                                            {{$pricings->featured_4}} <br>
+                                                            {{$pricings->featured_5}} <br>
+                                                            </td>
                                                             @empty
                                                                 <td class="alert-danger" colspan="8">Data Not Found</td>
                                                         </tr>
@@ -241,32 +240,31 @@ Dashboard
 
                                     </div>
                                 </div>
-                                <div class="chart tab-pane" id="Educations" style="position: relative; height: 300px;">
-                                    <div id="Educations">
+
+                                <div class="chart tab-pane" id="Clients" style="position: relative; height: 300px;">
+                                    <div id="Clients">
                                         <div class="tab-pane fade active show"  role="tabpanel" aria-labelledby="students-tab">
                                             <div class="table-responsive mt-15">
                                                 <table style="text-align: center" class="table center-aligned-table table-hover mb-0">
                                                     <thead>
                                                     <tr  class="table-info text-danger">
                                                         <th>#</th>
-                                                        <th>name</th>
-                                                        <th>From </th>
-                                                        <th>To</th>
-                                                        <th>University Name</th>
+                                                        <th>Client Name</th>
+                                                        <th>Position Client</th>
                                                         <th>Title</th>
-                                                        <th>Created At</th>
+                                                        <th>Image</th>
                                                     </tr>
                                                     </thead>
                                                     <tbody>
-                                                    @forelse(\App\education::latest()->take(5)->get() as $education)
+                                                    @forelse(\App\client::latest()->take(5)->get() as $clients)
                                                         <tr>
                                                             <td>{{$loop->iteration}}</td>
-                                                            <td>{{$education->name}}</td>
-                                                            <td>{{$education->from_education}}</td>
-                                                            <td>{{$education->to_education}}</td>
-                                                            <td>{{$education->univercity_name}}</td>
-                                                            <td>{{$education->title}}</td>
-                                                            <td class="text-success">{{$education->created_at}}</td>
+                                                            <td>{{$clients->name_client}}</td>
+                                                            <td>{{$clients->position_client}}</td>
+                                                            <td>{{$clients->title_client}}</td>
+                                                            <td>
+                                                            <img src="{{asset(  $clients->image)}}" width="100" height="100" /></td>
+                                                            </td>
                                                             @empty
                                                                 <td class="alert-danger" colspan="8">Data Not Found</td>
                                                         </tr>
@@ -278,6 +276,7 @@ Dashboard
 
                                     </div>
                                 </div>
+                              
                             </div>
                         </div><!-- /.card-body -->
                     </div>

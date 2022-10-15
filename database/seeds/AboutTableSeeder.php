@@ -16,25 +16,19 @@ class AboutTableSeeder extends Seeder
         DB::table('abouts')->delete();
 
         $data = [
-            ['key' => 'title_about', 'value' => 'title about'],
+            ['key' => 'company_name', 'value' => 'LUXURY DESIGN STUDIO'],
+            ['key' => 'title_about', 'value' => 'Interior and exterior design In addition to shop drawing  plans Architectural animation video Structural, electrical, mechanical and sanitary studies'],
             ['key' => 'birthday', 'value' => '2038-01-19 03:14:07'],
             ['key' => 'city', 'value' => 'Damascus'],
-            ['key' => 'website', 'value' => 'www.'],
-            ['key' => 'watch', 'value' => 'www.youtube.com'],
+            ['key' => 'website', 'value' => 'https://instagram.com/luxury.design.studio?igshid=YmMyMTA2M2Y='],
+            ['key' => 'watch', 'value' => 'https://www.youtube.com/channel/UCSz4t9W12EKv1d0CjNUoiSA'],
             ['key' => 'degree', 'value' => 'Master'],
-            ['key' => 'email', 'value' => 'ssss@gmail.com'],
-            ['key' => 'descriptions', 'value' => 'descriptions
-            summarydescriptions summarydescriptions summarydescriptions
-             summarydescriptions summarydescriptions summarydescriptions
-             summarydescriptions summarydescriptions summarydescriptions
-             summarydescriptions summarydescriptions summarydescriptions
-             summarydescriptions summarydescriptions summarydescriptions
-             summarydescriptions summarydescriptions summarydescriptions
-             summarydescriptions summarydescriptions summarydescriptions'],
+            ['key' => 'email', 'value' => '7asan3wwad@gmail.com'],
+            ['key' => 'descriptions', 'value' => 'Interior and exterior design In addition to shop drawing  plans Architectural animation video Structural, electrical, mechanical and sanitary studies'],
             ['key' => 'age', 'value' => '25'],
             ['key' => 'freelancer', 'value' => 'Active'],
-            ['key' => 'logo', 'value' => '1.jpg'],
-            ['key' => 'Position', 'value' => 'UI/UX Designer & Web Developer.'],
+            ['key' => 'logo', 'value' => '2.jpg'],
+            ['key' => 'Position', 'value' => 'Interior Designer & 3D Designer.'],
             ['key' => 'user', 'value' => '2.jpg'],
         ];
 

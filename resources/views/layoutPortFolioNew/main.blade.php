@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
-          <h1>{{ $user->name }}</h1>
+          <h1>{{ $about['company_name'] }}</h1>
           @foreach($Positions as $Position)
           <p style="color:white;">{{$Position->name_position}}</p>
           @endforeach
@@ -33,7 +33,8 @@
 
         <div class="row content">
           <div class="col-lg-6">
-          <h3>{{ $about['Position'] }}.</h3>
+          <h3>{{ $about['Position'] }}</h3>
+          <h5 style="color:#47b2e4;"> <i class="bi bi-chevron-right"></i> Position Descriptions :  </h5>
             <ul>
             @foreach($Positions as $Position)
             <li><i class="ri-check-double-line"></i> {{$Position->title_skill}}</li>
@@ -51,7 +52,7 @@
         <div class="row">
               <div class="col-lg-6">
                   <ul>
-                      <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>{{ $about['website'] }}</span></li>
+                      <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span> <a href="{{ $about['website'] }}" target="_blank"> CONNECT ME </a></span></li>
                       <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>{{ $contact['Calls'] }}</span></li>
                       <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>{{ $about['city'] }}</span></li>
                   </ul>
@@ -81,19 +82,17 @@
 
             <div class="content">
               <h3>Some common questions that you want answers <strong> About Our Company </strong></h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-              </p>
+              <br><br>
             </div>
 
             <div class="accordion-list">
               <ul>
 
-              <?php $i = 0; ?>
+              <?php $i=0; ?>
 
               @foreach($AboutQuestions as $AboutQuestion)
                 <li>
-                  <a data-bs-toggle="collapse" class="collapse" data-bs-target="#accordion-list-1"><span>0<?php $i++; ?></span> {{$AboutQuestion->question}}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                  <a  class="collapse" data-bs-target="#accordion-list-1"><span><i class="bx bx-help-circle icon-help"></i> 0{{$loop->iteration}}</span> {{$AboutQuestion->question}}</a>
                   <div id="accordion-list-1" class="collapse show" data-bs-parent=".accordion-list">
                     <p>
                      {{$AboutQuestion->answer}}
@@ -146,10 +145,7 @@
           <div class="section-title">
           <h2>Skills</h2>
            </div>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
+           <br><br>
 
             <div class="skills-content">
             @foreach ($Skiils as $Skill)
@@ -177,14 +173,16 @@
 
         <div class="section-title">
           <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
+          <p>We Provide The Best Services Ever .</p>
+
+          <br><br>
+          </div>
 
         <div class="row">
         @foreach ($Services as $Service)
           <div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div class="icon-box">
-              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <!-- <div class="icon"><i class="bx bxl-dribbble"></i></div> -->
               <h4>{{$Service->name_service}}</h4>
               <p> {{$Service->title_service}}</p>
             </div>
@@ -202,7 +200,9 @@
 
         <div class="section-title">
           <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>You can browse here some of works in our portfolio .</p>
+
+          <br><br>
         </div>
 
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
@@ -235,7 +235,7 @@
 
         <div class="section-title">
           <h2>Clients</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>You can find here some of our success partners  .</p>
         </div>
 
         <div class="row">
@@ -251,9 +251,8 @@
                 <span>{{$Client->position_client}}</span>
                 <p> {{$Client->title_client}}.</p>
                 <div class="social">
-                  <a href="" target="_blank" ><i class="ri-facebook-fill"></i></a>
-                  <a href="" target="_blank" ><i class="ri-instagram-fill"></i></a>
-                  <a href="" target="_blank" > <i class="ri-linkedin-box-fill"></i> </a>
+                  <a href="{{$Client->facebook}}" target="_blank" ><i class="ri-facebook-fill"></i></a>
+                  <a href="{{$Client->instegram}}" target="_blank" ><i class="ri-instagram-fill"></i></a>
                 </div>
               </div>
             </div>
@@ -273,7 +272,7 @@
 
         <div class="section-title">
           <h2>Pricing</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Pick your perfect web hosting plan.</p>
         </div>
 
         <div class="row">
@@ -338,7 +337,8 @@
 
         <div class="section-title">
           <h2>Frequently Asked Questions</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+
+        <br><br>
         </div>
 
         <div class="faq-list">
@@ -348,7 +348,7 @@
 
           @foreach($questions as $question)
             <li data-aos="fade-up" data-aos-delay="<?php $i=$i+100; ?>">
-              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">{{$question->question}} <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <i class="bx bx-help-circle icon-help"></i> <a class="collapse" data-bs-target="#faq-list-1">{{$question->question}} </a>
               <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
                 <p>
                 {{$question->answer}}
@@ -405,7 +405,7 @@
 
         <div class="section-title">
           <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>Let's Talk About Your Idea.</p>
         </div>
 
         <div class="row">

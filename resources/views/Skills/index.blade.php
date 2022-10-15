@@ -11,11 +11,11 @@
 @endsection
 
 @section('title_page1')
-    Skills
+Dashboard 
 @endsection
 
 @section('title_page2')
-    Dashboard
+Skills
 @endsection
 
 @section('content')
