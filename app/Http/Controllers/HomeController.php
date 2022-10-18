@@ -201,7 +201,7 @@ class HomeController extends Controller
         $Item = portfolioItem::where('id',$id)->get();
         $user = User::first();
 
-        return view ('projectinformation', compact('Item' ));
+        return view ('projectinformation', $about, compact('Item' , 'user'));
     }
 
 
