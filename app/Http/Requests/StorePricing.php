@@ -26,7 +26,7 @@ class StorePricing extends FormRequest
         return [
             'name_pricing' => 'required',
             'date' => 'required',
-            'price' => 'required',
+            'price' => 'required|digits_between:1,1000000',
             'featured_1' => 'required',
             'featured_2' => 'required',
             'featured_3' => 'required',
@@ -47,6 +47,7 @@ class StorePricing extends FormRequest
             'featured_3.required' =>'featured 3 is Required',
             'featured_4.required' =>'featured 4 is Required',
             'featured_5.required' =>'featured 5 is Required',
+            'price.digits_between'         => 'Price must be more of 1 $'
 
         ];
     }

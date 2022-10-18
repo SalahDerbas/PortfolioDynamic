@@ -29,6 +29,9 @@ class Storeitem extends FormRequest
             'url' => 'required',
             'descriptions_item' => 'required',
             'date_item' => 'required',
+            'photos' => 'required',
+            'photoooooo' => 'required',
+            
         ];
     }
 
@@ -40,6 +43,9 @@ class Storeitem extends FormRequest
             'url.required' => 'URL is Required',
             'descriptions_item.required' => 'Descriptions is Required',
             'date_item.required' => 'Date is Required',
+            'photos.required' => 'Photos is Required' ,
+            'photoooooo.required' => 'Photos is Required' ,
+            
         ];
     }
 }

@@ -127,7 +127,6 @@ class PortfolioitemController extends Controller
                 }
             }
 
-            echo 'photoooooooooooooo';
             // insert photoooooo
             if($request->hasfile('photoooooo'))
             {
