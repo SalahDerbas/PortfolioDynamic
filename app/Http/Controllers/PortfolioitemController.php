@@ -115,7 +115,8 @@ class PortfolioitemController extends Controller
                 {
 
                     $name = $file->getClientOriginalName();
-                    $file->storeAs('attachments/projects/'.$ItemsP->name_project_item, $file->getClientOriginalName(),'upload_attachments');
+                    $file->move('attachments/projects/'.$ItemsP->name_project_item , $name);
+                    //$file->storeAs('attachments/projects/'.$ItemsP->name_project_item, $file->getClientOriginalName(),'upload_attachments');
 
 
                     // insert in image_table
@@ -134,7 +135,8 @@ class PortfolioitemController extends Controller
                 {
 
                     $name1 = $file1->getClientOriginalName();
-                    $file1->storeAs('attachments/projects/'.$ItemsP->name_project_item .'/'.$ItemsP->name_project_item, '1111','upload_attachments1');
+                    $file1->move('attachments/projects/'.$ItemsP->name_project_item.'/'.$ItemsP->name_project_item , '1111' ,'upload_attachments1');
+                    // $file1->storeAs('attachments/projects/'.$ItemsP->name_project_item .'/'.$ItemsP->name_project_item, '1111','upload_attachments1');
 
 
                     // insert in image_table
@@ -174,6 +176,7 @@ class PortfolioitemController extends Controller
                 $ItemsP->url = $request->url,
                 $ItemsP->descriptions_item = $request->descriptions_item,
                 $ItemsP->date_item = $request->date_item,
+                $ItemsP->category_id = $request->category_id,
             ]);
             return redirect()->route('ItemsP.index')->with('info','Data update Successfully');
         }

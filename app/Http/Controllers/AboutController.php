@@ -39,14 +39,16 @@ class AboutController extends Controller
             if($request->hasFile('logo')) {
                 $logo_name = $request->file('logo')->getClientOriginalName();
                 about::where('key', 'logo')->update(['value' => $logo_name]);
-                $this->uploadFile($request,'logo','logo');
+                $request->file('logo')->move('attachments/logo/',$logo_name );
+                // $this->uploadFile($request,'logo','logo');
             }
 
 
             if($request->hasFile('user')) {
                 $user_name = $request->file('user')->getClientOriginalName();
                 about::where('key', 'user')->update(['value' => $user_name]);
-                $this->uploadFile($request,'user','user');
+                $request->file('user')->move('attachments/user/',$user_name );
+                // $this->uploadFile($request,'user','user');
             }
 
 

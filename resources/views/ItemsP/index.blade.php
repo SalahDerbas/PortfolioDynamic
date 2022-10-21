@@ -278,12 +278,12 @@ Projects
                                 <div class="col">
                                     <label for="Name" class="mr-sm-2">Name Project
                                         :</label>
-                                    <input id="name_project_item" type="text" name="name_project_item" class="form-control">
+                                    <input id="name_project_item" type="text" name="name_project_item" class="form-control" required>
                                 </div>
                                 <div class="col">
                                     <label for="Name_en" class="mr-sm-2">Name Client
                                         :</label>
-                                    <input id="name_client" type="text" class="form-control" name="name_client">
+                                    <input id="name_client" type="text" class="form-control" name="name_client" required>
                                 </div>
                             </div>
 
@@ -294,7 +294,7 @@ Projects
 
                                     <label for="Name" class="mr-sm-2">Category
                                         :</label>
-                                    <select class="form-control" name="category_id" id="category_id" required autofocus >
+                                    <select class="form-control" name="category_id" id="category_id" required autofocus required >
                                         @foreach($categories as $c)
                                             <option value = "{{ $c->id }}">{{ $c->name_category }}</option>
                                         @endforeach
@@ -315,35 +315,35 @@ Projects
                                 <div class="col">
                                     <label for="Name" class="mr-sm-2"> URL
                                         :</label>
-                                    <input id="url" type="text" name="url" class="form-control">
+                                    <input id="url" type="text" name="url" class="form-control" required>
                                 </div>
                                 <div class="col">
                                     <label for="Name_en" class="mr-sm-2">Date
                                         :</label>
-                                    <input id="date_item" type="date" class="form-control" name="date_item">
+                                    <input id="date_item" type="date" class="form-control" name="date_item" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Descriptions
                                     :</label>
-                                <textarea class="form-control" name="descriptions_item" id="exampleFormControlTextarea1"
+                                <textarea class="form-control" name="descriptions_item" required id="exampleFormControlTextarea1"
                                           rows="4"></textarea>
                             </div>
 
                             <div class="row" >
                                 <div class="col">
-                                    <label for="photos" class="mr-sm-2">Photos
+                                    <label for="photos" class="mr-sm-2">Photos *(jpg)
                                         :</label>
-                                    <input type="file" accept="image/*" name="photos[]" multiple>
+                                    <input type="file" accept="image/*" name="photos[]" multiple required>
                                 </div>
                             </div>
                             <br>
 
                             <div class="row" >
                                 <div class="col">
-                                    <label for="photoooooo" class="mr-sm-2">Main Photo
+                                    <label for="photoooooo" class="mr-sm-2">Main Photo *(jpg)
                                         :</label>
-                                    <input type="file" accept="image" name="photoooooo[]" >
+                                    <input type="file" accept="image" name="photoooooo[]" required >
                                 </div>
                             </div>
 

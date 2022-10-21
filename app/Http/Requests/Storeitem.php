@@ -24,13 +24,13 @@ class Storeitem extends FormRequest
     public function rules()
     {
         return [
-            'name_project_item' => 'required',
-            'name_client' => 'required',
-            'url' => 'required',
-            'descriptions_item' => 'required',
-            'date_item' => 'required',
-            'photos' => 'required',
-            'photoooooo' => 'required',
+            // 'name_project_item' => 'required',
+            // 'name_client' => 'required',
+            // 'url' => 'required',
+            // 'descriptions_item' => 'required',
+            // 'date_item' => 'required',
+            // 'photos' => 'required',
+            // 'photoooooo' => 'required',
             
         ];
     }

@@ -110,7 +110,7 @@ About
 
 
                                 <div class="form-group row">
-                                    <label class="col-lg-2 col-form-label font-weight-semibold">Logo</label>
+                                    <label class="col-lg-2 col-form-label font-weight-semibold">Photo Main </label>
                                     <div class="col-lg-9">
                                         <div class="mb-3">
                                             <img style="width: 100px" height="100px" src="{{ URL::asset('attachments/logo/'.$about['logo']) }}" alt="">
