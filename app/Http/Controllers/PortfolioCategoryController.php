@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCategory;
 use App\portfolioCategory;
+use App\portfolioItem;
 use Illuminate\Http\Request;
+
 
 class PortfolioCategoryController extends Controller
 {
@@ -76,8 +78,19 @@ class PortfolioCategoryController extends Controller
      */
     public function destroy(Request $request)
     {
-        $CategoryP = portfolioCategory::findOrFail($request->id)->delete();
-        return redirect()->route('CategoryP.index')->with('warning','Data delete Successfully');
+        
+        // $CategoryP = portfolioCategory::findOrFail($request->id);
+        $items = portfolioItem::all();
+        foreach ($items as $item) {
+            $item = portfolioItem::where(['category_id'=>$request->id])->first();
+        }
+        if($item){
+            return redirect()->route('CategoryP.index')->with('warning','You Can not Delete This Category because find many of projects it');
+          }
+        else {
+            $CategoryP = portfolioCategory::findOrFail($request->id)->delete();
+            return redirect()->route('CategoryP.index')->with('warning','Data delete Successfully');
+        }
 
     }
 

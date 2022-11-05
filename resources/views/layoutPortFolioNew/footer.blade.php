@@ -26,6 +26,7 @@
             <a href="{{ $contact['instagram'] }}" target="_blank" class="instagram"><i class="bx bxl-instagram"></i></a>
             <a href="{{ $contact['skype'] }}" target="_blank" class="google-plus"><i class="bx bxl-skype"></i></a>
             <a href="{{ $contact['linkedIn'] }}" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            <a href="{{ $about['watch'] }}" target="_blank" class="youtube"><i class="bi bi-youtube"></i></a>
         </div>
       </div>
 
