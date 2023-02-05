@@ -121,6 +121,14 @@
                     </a>
                 </li>
 
+                <li class="nav-header"> Contact Message </li>
+                <li class="nav-item">
+                    <a href="{{route('Contactessage.index')}}" class="nav-link">
+                        <i class="fas fa-address-book nav-icon"></i>
+                        <p>    Contact Message </p>
+                    </a>
+                </li>
+
             </ul>
         </nav>
         <!-- /.sidebar-menu -->

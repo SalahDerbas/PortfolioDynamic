@@ -38,11 +38,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('AboutQuestions', 'AboutQuestionsController');
     Route::resource('Questions', 'QuestionsController');
     Route::resource('Pricings', 'PricingsController');
-    
+    Route::resource('Contactessage', 'ContactessageController')->only('index','destroy');
+
 
 });
 
-
+Route::POST('/Contactessage/store' , 'ContactessageController@store')->name('Contactessage.store');
 Route::post('/email', 'HomeController@sendEmail')->name('sendEmail');
 Route::get('/myportfolio', 'HomeController@myportfolio')->name('myportfolio');
 Route::get('/portfolio', 'HomeController@portfolio')->name('portfolio');

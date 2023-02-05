@@ -47,7 +47,11 @@ class HomeController extends Controller
 
         return view('welcome' , compact('Skill' ,'Category' ,'ItemsP' , 'Pricings' , 'Clients'));
     }
+    public function store(Request $request)
+    {
 
+        return $request;
+    }
 
     public function sendEmail(Request $request)
     {
