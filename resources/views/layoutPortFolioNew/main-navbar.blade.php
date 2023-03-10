@@ -1,6 +1,6 @@
 <div class="container d-flex align-items-center">
 
-<h1 style="font-size:18px" class="logo me-auto"><a href="{{ route('portfolio') }}">{{ $about['company_name'] }}</a></h1>
+<h1 style="font-size:18px" class="logo me-auto"><a href="{{ route('portfolio') }}"><img src="{{asset('attachments/Logo.png')}}" /> {{ $about['company_name'] }}</a></h1>
 <!-- Uncomment below if you prefer to use an image logo -->
 <!-- <a href="index.html" class="logo me-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 

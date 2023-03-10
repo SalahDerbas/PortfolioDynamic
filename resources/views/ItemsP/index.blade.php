@@ -334,7 +334,7 @@ Projects
                                 <div class="col">
                                     <label for="photos" class="mr-sm-2">Photos *(jpg)
                                         :</label>
-                                    <input type="file" accept="image/*" name="file[]" multiple required>
+                                    <input type="file" accept="image/*" name="file[]" multiple>
                                 </div>
                             </div>
                             <br>

@@ -43,7 +43,7 @@ class Storeitem extends FormRequest
             'url.required' => 'URL is Required',
             'descriptions_item.required' => 'Descriptions is Required',
             'date_item.required' => 'Date is Required',
-            'photos.required' => 'Photos is Required' ,
+            // 'photos.required' => 'Photos is Required' ,
             'photoooooo.required' => 'Photos is Required' ,
             
         ];

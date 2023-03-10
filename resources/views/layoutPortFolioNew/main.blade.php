@@ -210,14 +210,14 @@
         <ul id="portfolio-flters" class="d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
         <div id="myBtnContainer">
         <li data-filter="*" class="filter-active" style="margin-right:100px;">
-        <button class="btn active" onclick="filterSelection('all')">
+        <button class="btn active" onclick="filterSelection('all')" style="background-color: #47b2e4;  padding:20px;" >
         All
         </button></li>
           @foreach ($Projects as $Project)
-          <button class="btn" onclick="filterSelection('{{$Project->name_category}}')"> 
+          <button class="btn" onclick="filterSelection('{{$Project->name_category}}')" style="background-color: #47b2e4;  padding:20px;"> 
 
-          <li data-filter=".filter-{{$Project->name_category}}">
-          {{$Project->name_category}}
+          <li data-filter=".filter-{{$Project->id}}">
+          {{strtoupper($Project->name_category)}}
           
           </li>
           </button>
@@ -227,7 +227,7 @@
 
         <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
         @foreach($Items as $Item)
-          <div class="col-lg-4 col-md-6 portfolio-item filter-{{$Item->category->name_category}} filterDiv  {{$Item->category->name_category}}">
+          <div class="col-lg-4 col-md-6 portfolio-item filter-{{$Item->category->id}}">
             <div class="portfolio-img"><img src="{{asset('attachments/projects/'.$Item->name_project_item .'/'.$Item->name_project_item . '/1111')}}" class="img-fluid" alt=""></div>
             <div class="portfolio-info">
               <h4>{{$Item->name_project_item}}</h4>

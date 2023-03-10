@@ -3,7 +3,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{asset('assets/img/Logo SD1.png')}}" rel="icon">
+  <link href="{{asset('attachments/Logo.png')}}" rel="icon">
   <link href="{{asset('assets3/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->

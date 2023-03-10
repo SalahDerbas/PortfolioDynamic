@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\contactessage;
+use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Notifications\Newvisit;
 
 class ContactessageController extends Controller
 {
@@ -44,6 +46,8 @@ class ContactessageController extends Controller
             $contactessage->subject = $request->subject;
             $contactessage->message = $request->message;
             $contactessage->save();
+            $user = User::first();
+            $user->notify(new Newvisit("A new user has visited on your application."));
             return redirect()->back();
 
         }

@@ -97,7 +97,6 @@ class PortfolioitemController extends Controller
     {
         try {
 //            return $request;
-
             $validated = $request->validated();
             $ItemsP = new portfolioItem();
             $ItemsP->name_project_item = $request->name_project_item;
@@ -109,13 +108,13 @@ class PortfolioitemController extends Controller
             $ItemsP->save();
 
             // insert img
-            if($request->hasfile('photos'))
+            if($request->hasfile('file'))
             {
-                foreach($request->file('photos') as $file)
+                foreach($request->file('file') as $file)
                 {
 
                     $name = $file->getClientOriginalName();
-                    $file->move('attachments/projects/'.$ItemsP->name_project_item , $name);
+                    $file->move(public_path().'/attachments/projects/'.$ItemsP->name_project_item , $name);
                     //$file->storeAs('attachments/projects/'.$ItemsP->name_project_item, $file->getClientOriginalName(),'upload_attachments');
 
 
@@ -135,7 +134,7 @@ class PortfolioitemController extends Controller
                 {
 
                     $name1 = $file1->getClientOriginalName();
-                    $file1->move('attachments/projects/'.$ItemsP->name_project_item.'/'.$ItemsP->name_project_item , '1111' ,'upload_attachments1');
+                    $file1->move(public_path().'/attachments/projects/'.$ItemsP->name_project_item.'/'.$ItemsP->name_project_item , '1111' ,'upload_attachments1');
                     // $file1->storeAs('attachments/projects/'.$ItemsP->name_project_item .'/'.$ItemsP->name_project_item, '1111','upload_attachments1');
 
 
